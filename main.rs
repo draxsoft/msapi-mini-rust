@@ -2,7 +2,7 @@ use std::io::Write;
 use std::net::TcpStream;
 
 fn main() -> std::io::Result<()> {
-    let script = "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source\"))()";
+    let script = "loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()";
     let len = (script.len() + 1) as u32; // +1 for the null terminator
     let mut header = [0u8; 16];
     header[8..12].copy_from_slice(&len.to_le_bytes());
